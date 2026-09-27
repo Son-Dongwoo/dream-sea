@@ -1,17 +1,35 @@
 ---
-
+import DreamSeaLayout from '../layouts/DreamSeaLayout.astro';
+import { seaUrl } from '../lib/sea';
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<DreamSeaLayout current="home">
+<section class="hub" aria-labelledby="hub-title">
+  <div class="hero-copy">
+    <p class="eyebrow"><span aria-hidden="true">✧</span> A RESEARCHER'S LITTLE UNIVERSE</p>
+    <h1 id="hub-title" lang="en">Dream <em>Sea</em><span class="title-star" aria-hidden="true">✧</span></h1>
+    <p class="hero-description">연구와 기억이 머무는 바다.<br />빛나는 장소를 따라 천천히 유영해 보세요.</p>
+  </div>
+  <nav class="portal-map" aria-label="탐험할 공간 선택">
+<a class="portal portal--papers" href={seaUrl('world/papers/')} aria-label="Paper Reef — 논문의 서고로 이동">
+      <span class="portal__art"><img src={seaUrl('dream-sea/reef.svg')} width="420" height="360" alt="" /></span>
+      <span class="portal__label"><span class="portal__number">01 <span aria-hidden="true">—</span> 논문의 서고</span>
+      <span class="portal__name" lang="en">Paper Reef</span><span class="portal__description">발견이 빛나는 유물이 되는 곳.</span>
+      <span class="portal__entry">탐험하기 <span aria-hidden="true">↗</span></span></span>
+    </a>
+<a class="portal portal--events" href={seaUrl('world/events/')} aria-label="Memory Observatory — 기억의 천문대로 이동">
+      <span class="portal__art"><img src={seaUrl('dream-sea/observatory.svg')} width="420" height="360" alt="" /></span>
+      <span class="portal__label"><span class="portal__number">02 <span aria-hidden="true">—</span> 기억의 천문대</span>
+      <span class="portal__name" lang="en">Memory Observatory</span><span class="portal__description">함께한 순간이 별자리로 남는 곳.</span>
+      <span class="portal__entry">탐험하기 <span aria-hidden="true">↗</span></span></span>
+    </a>
+<a class="portal portal--about" href={seaUrl('about/')} aria-label="Lighthouse — 연구자의 등대로 이동">
+      <span class="portal__art"><img src={seaUrl('dream-sea/lighthouse.svg')} width="420" height="360" alt="" /></span>
+      <span class="portal__label"><span class="portal__number">03 <span aria-hidden="true">—</span> 연구자의 등대</span>
+      <span class="portal__name" lang="en">Lighthouse</span><span class="portal__description">이 작은 바다를 만든 사람.</span>
+      <span class="portal__entry">탐험하기 <span aria-hidden="true">↗</span></span></span>
+    </a>
+  </nav>
+  <p class="hub-hint"><span class="hint-orbit" aria-hidden="true">✧</span> 장소를 클릭하면 새로운 공간으로 이동합니다.</p>
+  <span class="map-caption" aria-hidden="true">THE DREAMING WATERS<br />PORT 00 · HOME</span>
+</section>
+</DreamSeaLayout>

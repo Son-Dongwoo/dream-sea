@@ -1,0 +1,17 @@
+---
+import DreamSeaLayout from '../../layouts/DreamSeaLayout.astro';
+import { seaUrl } from '../../lib/sea';
+---
+<DreamSeaLayout title="Archive — Dream Sea" current="archive">
+<section class="archive-page" aria-labelledby="archive-title">
+ <a class="back-link" href={seaUrl()}><span aria-hidden="true">←</span> Dream Sea로 돌아가기</a>
+ <p class="eyebrow archive-eyebrow">A QUIETER WAY TO EXPLORE</p>
+ <h1 id="archive-title" lang="en">The Archive<span aria-hidden="true">.</span></h1>
+ <p class="archive-lead">탐험하지 않아도, 모든 기록은 이곳에.<br />논문과 활동을 바로 찾아볼 수 있는 조용한 서가입니다.</p>
+ <div class="archive-sections">
+  <section class="archive-shelf" aria-labelledby="shelf-papers"><p class="eyebrow">01 / RESEARCH</p><h2 id="shelf-papers">논문 <span lang="en">Papers</span></h2><p>아직 공개된 논문 기록이 없습니다.</p><a class="text-link" href={seaUrl('world/papers/')}>Paper Reef 탐험하기 <span aria-hidden="true">↗</span></a></section>
+  <section class="archive-shelf" aria-labelledby="shelf-events"><p class="eyebrow">02 / MEMORIES</p><h2 id="shelf-events">활동 <span lang="en">Moments</span></h2><p>아직 공개된 활동 기록이 없습니다.</p><a class="text-link" href={seaUrl('world/events/')}>Memory Observatory 탐험하기 <span aria-hidden="true">↗</span></a></section>
+ </div>
+ <p class="archive-note">현재는 공간을 연결하는 첫 버전입니다. 실제 기록과 검색·필터 기능은 다음 단계에서 추가합니다.</p>
+</section>
+</DreamSeaLayout>

@@ -1,0 +1,63 @@
+---
+import { seaUrl } from '../lib/sea';
+interface Props {
+  title?: string;
+  description?: string;
+  current?: 'home' | 'papers' | 'events' | 'about' | 'archive';
+}
+const {
+  title = 'Dream Sea — 연구와 기억이 머무는 바다',
+  description = 'Son Dongwoo의 논문과 활동 기록을 발견하는 작은 바다. 빛나는 장소를 따라 탐험해 보세요.',
+  current = 'home',
+} = Astro.props;
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefined;
+---
+<!doctype html>
+<html lang="ko" data-motion="off">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#091c2b" />
+  <meta name="description" content={description} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  {canonical && <link rel="canonical" href={canonical} />}
+  <title>{title}</title>
+  <link rel="icon" href={seaUrl('dream-sea/mark.svg')} type="image/svg+xml" />
+  <script is:inline>(() => {
+  let saved = null;
+  try { saved = localStorage.getItem('dream-sea:motion'); } catch (_) {}
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.documentElement.dataset.motion = reduced || saved === 'off' ? 'off' : 'on';
+})();</script>
+  <link rel="stylesheet" href={seaUrl('dream-sea/sea.css')} />
+</head>
+<body data-world={current}>
+<div class="ocean" aria-hidden="true">
+  <div class="ocean-layer"><img src={seaUrl('dream-sea/ocean.svg')} alt="" width="1600" height="900" fetchpriority="high" /></div>
+  <div class="ocean-vignette"></div>
+  <div class="motes"><i style="--x:1%;--y:9%;--size:2px;--delay:-0.0s;--duration:12s"></i><i style="--x:72%;--y:52%;--size:3px;--delay:-1.7s;--duration:13s"></i><i style="--x:45%;--y:11%;--size:2px;--delay:-3.4s;--duration:14s"></i><i style="--x:18%;--y:54%;--size:3px;--delay:-5.1s;--duration:15s"></i><i style="--x:89%;--y:13%;--size:2px;--delay:-6.8s;--duration:16s"></i><i style="--x:62%;--y:56%;--size:3px;--delay:-8.5s;--duration:12s"></i><i style="--x:35%;--y:15%;--size:2px;--delay:-10.2s;--duration:13s"></i><i style="--x:8%;--y:58%;--size:3px;--delay:-11.9s;--duration:14s"></i><i style="--x:79%;--y:17%;--size:2px;--delay:-13.6s;--duration:15s"></i><i style="--x:52%;--y:60%;--size:3px;--delay:-15.299999999999999s;--duration:16s"></i><i style="--x:25%;--y:19%;--size:2px;--delay:-17.0s;--duration:12s"></i><i style="--x:96%;--y:62%;--size:3px;--delay:-18.7s;--duration:13s"></i><i style="--x:69%;--y:21%;--size:2px;--delay:-20.4s;--duration:14s"></i><i style="--x:42%;--y:64%;--size:3px;--delay:-22.099999999999998s;--duration:15s"></i><i style="--x:15%;--y:23%;--size:2px;--delay:-23.8s;--duration:16s"></i><i style="--x:86%;--y:66%;--size:3px;--delay:-25.5s;--duration:12s"></i><i style="--x:59%;--y:25%;--size:2px;--delay:-27.2s;--duration:13s"></i><i style="--x:32%;--y:68%;--size:3px;--delay:-28.9s;--duration:14s"></i><i style="--x:5%;--y:27%;--size:2px;--delay:-30.599999999999998s;--duration:15s"></i><i style="--x:76%;--y:70%;--size:3px;--delay:-32.3s;--duration:16s"></i><i style="--x:49%;--y:29%;--size:2px;--delay:-34.0s;--duration:12s"></i><i style="--x:22%;--y:72%;--size:3px;--delay:-35.699999999999996s;--duration:13s"></i><i style="--x:93%;--y:31%;--size:2px;--delay:-37.4s;--duration:14s"></i><i style="--x:66%;--y:74%;--size:3px;--delay:-39.1s;--duration:15s"></i><i style="--x:39%;--y:33%;--size:2px;--delay:-40.8s;--duration:16s"></i><i style="--x:12%;--y:76%;--size:3px;--delay:-42.5s;--duration:12s"></i></div>
+</div>
+<a class="skip-link" href="#main-content">본문으로 바로 가기</a>
+<header class="site-header">
+  <a class="brand" href={seaUrl()} aria-label="Dream Sea — 처음으로">
+    <img src={seaUrl('dream-sea/mark.svg')} width="36" height="36" alt="" />
+    <span><strong>Dream Sea</strong><small>SON DONGWOO</small></span>
+  </a>
+  <nav class="header-nav" aria-label="주 메뉴">
+    <a href={seaUrl()} aria-current={current === 'home' ? 'page' : undefined}>탐험 지도</a>
+    <a href={seaUrl('archive/')} aria-current={current === 'archive' ? 'page' : undefined}>기록 목록 <span aria-hidden="true">↗</span></a>
+    <button id="motion-toggle" class="motion-toggle" type="button" aria-pressed="false" hidden>
+      <span class="motion-symbol" aria-hidden="true">≈</span><span class="motion-copy">움직임 줄이기</span>
+    </button>
+  </nav>
+</header>
+<main id="main-content" tabindex="-1"><slot /></main>
+<footer class="site-footer">
+  <span><span class="status-light" aria-hidden="true"></span> DREAM SEA <span class="footer-separator">/</span> A WORLD IN THE MAKING</span>
+  <span>작은 발견이 하나의 세계가 되는 곳.</span>
+</footer>
+<script is:inline src={seaUrl('dream-sea/sea.js')} defer></script>
+</body>
+</html>

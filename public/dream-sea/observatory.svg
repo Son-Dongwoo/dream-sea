@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 360" fill="none">
+<defs>
+ <linearGradient id="stone" x1="70" y1="60" x2="300" y2="300" gradientUnits="userSpaceOnUse"><stop stop-color="#356473"/><stop offset=".5" stop-color="#172e40"/><stop offset="1" stop-color="#101d30"/></linearGradient>
+ <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#baf6df"/><stop offset="1" stop-color="#498c95"/></linearGradient>
+ <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b6f7dc"/><stop offset=".4" stop-color="#548b95" stop-opacity=".4"/><stop offset="1" stop-color="#1b3b55" stop-opacity=".15"/></linearGradient>
+ <radialGradient id="aura"><stop stop-color="#70eacb" stop-opacity=".35"/><stop offset="1" stop-color="#70eacb" stop-opacity="0"/></radialGradient>
+ <radialGradient id="violet"><stop stop-color="#c4b2ed" stop-opacity=".4"/><stop offset="1" stop-color="#9578dc" stop-opacity="0"/></radialGradient>
+ <linearGradient id="rock" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#274651"/><stop offset="1" stop-color="#0a1626"/></linearGradient>
+</defs>
+<ellipse cx="214" cy="164" rx="178" ry="143" fill="url(#violet)"/>
+<ellipse cx="212" cy="310" rx="122" ry="14" fill="#071321" opacity=".3"/>
+<path d="m83 261 77-37 122 5 68 28-41 21-40 15-42 41-27-10-24-33-38-7Z" fill="url(#rock)"/>
+<path d="m88 257 105 24 142-25-69-22-112-4Z" fill="#44516d"/><path d="m108 263 89 13 109-19" stroke="#aa9bc8" stroke-opacity=".7"/>
+<path d="m161 285 38 40 14-45m52 13-37 37" stroke="#3c4967" stroke-width="2"/>
+<path d="M119 242v-41h182v41l-87 26Z" fill="url(#stone)" stroke="#648695"/>
+<path d="M119 201q0-97 91-103 91 6 91 103Z" fill="url(#stone)" stroke="#a2a1c3" stroke-width="2"/>
+<path d="M133 200q6-73 77-87 72 14 77 87" stroke="#8f9da8"/><path d="M161 199q-1-65 49-88 48 29 49 88m-49-87v87" stroke="#9da9b8" stroke-opacity=".6"/>
+<path d="M111 201h198v11H111Z" fill="#758497"/><path d="M108 242h204v10H108Z" fill="#596980"/>
+<path d="M184 258v-29q24-28 49 0v29" fill="#14283e" stroke="#bcc0c8"/>
+<path d="M138 220v16m23-16v16m99-16v16m22-16v16" stroke="#a1d6ca" stroke-width="5"/>
+<ellipse cx="213" cy="93" rx="100" ry="34" transform="rotate(-24 213 93)" stroke="#c6b3e7" stroke-width="1.5" opacity=".8"/>
+<ellipse cx="213" cy="93" rx="79" ry="29" transform="rotate(43 213 93)" stroke="#a898d1" stroke-width="1.5" opacity=".8"/>
+<circle cx="213" cy="93" r="17" fill="#bfaff2" fill-opacity=".3" stroke="#ded1f3"/>
+<path d="M213 67v52m-26-26h52" stroke="#e2d4fa"/><circle cx="299" cy="54" r="4" fill="#e0cdf5"/><circle cx="142" cy="47" r="3" fill="#c7b8f8"/>
+<path d="m282 32 31 25 36 72-36 29m-240-7 25-43 22-12" stroke="#9586b4" stroke-opacity=".6" stroke-dasharray="2 6"/>
+<g fill="#dbc7f5"><circle cx="282" cy="32" r="2"/><circle cx="349" cy="129" r="3"/><circle cx="313" cy="158" r="2"/><circle cx="73" cy="151" r="2"/><circle cx="98" cy="108" r="3"/></g>
+<path d="M100 260q-4-27-23-39m26 25q18-21 13-39m202 51q7-41 20-45m-16 31q-18-22-11-31" stroke="#6b7c9d" stroke-width="3" stroke-linecap="round"/>
+</svg>
