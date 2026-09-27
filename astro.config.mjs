@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://son-dongwoo.github.io',
+  site: 'https://temp.github.io',
   base: '/dream-sea',
   output: 'static',
 });
